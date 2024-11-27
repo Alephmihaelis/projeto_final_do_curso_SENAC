@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Funcionário</title>
+    <script>
+        // Função para definir a data atual no campo de data
+        window.onload = function() {
+            // Cria uma nova instância de data
+            var hoje = new Date();
+            // Extrai o ano, mês e dia da data atual
+            var ano = hoje.getFullYear();
+            var mes = (hoje.getMonth() + 1).toString().padStart(2, '0');  // Mes começa do 0, por isso somamos 1
+            var dia = hoje.getDate().toString().padStart(2, '0');  // Preenche o dia com 0 se necessário
+            // Formata no formato 'YYYY-MM-DD' exigido pelo campo de data
+            var dataAtual = ano + '-' + mes + '-' + dia;
+            // Define o valor do campo de data com a data atual
+            document.getElementById("contratado_em").value = dataAtual;
+        };
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Adicionar Novo Funcionário</h1>
+    <form method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="tel">Telefone:</label>
+        <input type="text" name="tel" id="tel" required maxlength="11">
+
+        <label for="cargo">Cargo:</label>
+        <input type="text" name="cargo" id="cargo" required>
+
+        <label for="contratado">Contratado em:</label>
+        <input type="date" name="contratado_em" id="contratado_em" required>
+
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <div id="bttn">
+        <a href="{{ url_for('index') }}">Voltar</a>
+    </div>
+
+<script>
+    if (window.history.replaceState) window.history.replaceState(null, null, window.location.href)
+</script>
+
+</body>
+</html>

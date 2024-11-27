@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de funcionários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Lista de Funcionários</h1>
+    <button>
+        <a href="{{ url_for('add') }}">Adicionar funcionário</a>
+    </button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Cargo</th>
+                <th>Contratado em</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for funcs in func %}
+            <tr>
+                <td>{{ funcs.id }}</td>
+                <td>{{ funcs.name }}</td>
+                <td>{{ funcs.email }}</td>
+                <td>{{ funcs.tel }}</td>
+                <td>{{ funcs.cargo }}</td>
+                <td>{{ funcs.contratado_em }}</td>
+                <td>
+                    <form action="{{ url_for('delete', id=funcs.id) }}" method="POST">
+                        <button type="submit"><i class="fa-solid fa-trash fa-fw" title="Apagar"></i></button>
+                    </form>
+
+                &nbsp;<a href="{{ url_for('edit', id=funcs.id) }}">
+                        <button type="button"><i class="fa-solid fa-pencil fa-fw" title="Editar"></i></button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

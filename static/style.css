@@ -1,0 +1,57 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border: 2px solid #ddd;
+}
+
+form input, form button {
+    margin: 5px;
+    padding: 10px;
+}
+
+form label {
+    margin-top: 10px;
+    display: block;
+}
+
+form button, a button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    display: block;
+}
+
+form button:hover, a button:hover {
+    background-color: #c0392b;
+}
