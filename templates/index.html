@@ -39,9 +39,11 @@
                         <button type="submit"><i class="fa-solid fa-trash fa-fw" title="Apagar"></i></button>
                     </form>
 
-                &nbsp;<a href="{{ url_for('edit', id=funcs.id) }}">
+                <span class="action-buttons">
+                    <a href="{{ url_for('edit', id=funcs.id) }}">
                         <button type="button"><i class="fa-solid fa-pencil fa-fw" title="Editar"></i></button>
                     </a>
+                </span>
                 </td>
             </tr>
             {% endfor %}
