@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Arial', sans-serif;
     padding: 20px;
@@ -35,6 +36,7 @@ th {
     background-color: #333;
     text-transform: uppercase;
     color: #ddd;
+    text-align: center;
 }
 
 td {
@@ -176,7 +178,6 @@ form button:active, a button:active {
         padding: 5px; /* Menos padding em telas muito pequenas */
     }
 }
-
 
 .action-buttons {
     display: flex;
