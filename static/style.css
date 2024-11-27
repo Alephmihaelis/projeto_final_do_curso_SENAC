@@ -1,15 +1,23 @@
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', sans-serif;
     padding: 20px;
-    background-color: black;
-    color: white;
+    background-color: #121212;
+    color: #f5f5f5;
+    line-height: 1.5;
+    margin: 0;
 }
 
 a {
     text-decoration: none;
+    color: #1abc9c;
     margin-bottom: 20px;
     display: inline-block;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #16a085;
 }
 
 table {
@@ -18,26 +26,51 @@ table {
     margin-top: 20px;
 }
 
+th, td {
+    padding: 12px;
+    border: 2px solid #444;
+    text-align: left;
+}
+
 th {
-    padding: 10px;
-    text-align: center;
-    border: 2px solid #ddd;
+    background-color: #333;
+    text-transform: uppercase;
+    color: #ddd;
 }
 
 td {
-    padding: 10px;
-    text-align: left;
-    border: 2px solid #ddd;
+    background-color: #222;
 }
 
 form input, form button {
-    margin: 5px;
-    padding: 10px;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #444;
+    width: 100%;
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+form input {
+    padding: 12px 15px;
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 form label {
     margin-top: 10px;
     display: block;
+    font-size: 14px;
+    color: #bbb;
+}
+
+form input:focus, form button:focus {
+    outline: none;
+    border-color: #1abc9c;
 }
 
 form button, a button {
@@ -45,13 +78,102 @@ form button, a button {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 12px 20px;
     cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     text-align: center;
-    font-size: 15px;
-    display: block;
+    width: auto;
+    margin-right: 10px;
 }
 
 form button:hover, a button:hover {
     background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+form button:active, a button:active {
+    transform: translateY(2px);
+}
+
+@media (max-width: 1024px) {
+    table {
+        font-size: 14px; /* Reduz o tamanho da fonte da tabela */
+    }
+
+    form input, form button {
+        width: 100%; /* Garante que os inputs e botões ocupem toda a largura em telas pequenas */
+    }
+
+    th, td {
+        font-size: 14px; /* Ajusta o tamanho da fonte para dispositivos móveis */
+        padding: 10px;
+    }
+
+    body {
+        padding: 10px; /* Menos padding para telas pequenas */
+    }
+}
+
+/* Responsividade para dispositivos móveis (smartphones) */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px; /* Reduz o tamanho da fonte da tabela para telas menores */
+    }
+
+    th, td {
+        font-size: 12px; /* Ajusta o tamanho da fonte */
+        padding: 8px; /* Reduz o padding nas células */
+    }
+
+    form input, form button {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos campos de entrada e botões */
+        padding: 12px 10px; /* Ajusta o padding */
+        margin: 10px 0;
+    }
+
+    form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Ajusta o botão para ocupar toda a largura */
+    form button, a button {
+        width: 100%; /* Botões ocupando toda a largura disponível */
+    }
+
+    body {
+        padding: 5px; /* Reduz o padding para telas muito pequenas */
+    }
+}
+
+/* Responsividade para telas menores que 480px (smartphones em modo retrato) */
+@media (max-width: 480px) {
+    table {
+        font-size: 10px; /* Ajusta o tamanho da fonte para telas muito pequenas */
+    }
+
+    form input, form button {
+        font-size: 12px; /* Ajusta o tamanho da fonte */
+        padding: 8px; /* Ajusta o padding */
+    }
+
+    form {
+        padding-right: 30px;
+    }
+
+    th, td {
+        font-size: 10px; /* Ajusta o tamanho da fonte para o cabeçalho e células */
+        padding: 6px; /* Ajusta o padding nas células */
+    }
+
+    form button, a button {
+        width: 100%; /* Botões ocupando toda a largura disponível */
+        font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    }
+
+    body {
+        padding: 5px; /* Menos padding em telas muito pequenas */
+    }
 }

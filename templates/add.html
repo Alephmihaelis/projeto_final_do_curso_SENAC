@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Adicionar Novo Funcionário</h1>
+    <h1>Adicionar novo funcionário</h1>
+    <a href="{{ url_for('index') }}">Voltar</a>
     <form method="POST">
         <label for="name">Nome:</label>
         <input type="text" name="name" id="name" required>
@@ -41,10 +42,6 @@
 
         <button type="submit">Adicionar</button>
     </form>
-
-    <div id="bttn">
-        <a href="{{ url_for('index') }}">Voltar</a>
-    </div>
 
 <script>
     if (window.history.replaceState) window.history.replaceState(null, null, window.location.href)
