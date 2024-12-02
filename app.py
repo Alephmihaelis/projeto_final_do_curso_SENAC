@@ -19,7 +19,7 @@ def index():
 
     conn = db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute('''SELECT f.id, f.name, f.tel, f.cargo, f.contratado_em, r.name AS recrutador
+    cursor.execute('''SELECT f.id, f.name, f.email, f.tel, f.cargo, f.contratado_em, r.name AS recrutador
                    FROM funcionarios f
                    LEFT JOIN recrutadores r ON f.recrutador_id = r.id''')
     funcionarios = cursor.fetchall()
