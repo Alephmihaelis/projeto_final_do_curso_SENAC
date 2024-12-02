@@ -19,9 +19,11 @@ def index():
 
     conn = db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute('SELECT * FROM funcionarios')
+    cursor.execute('''SELECT f.id, f.name, f.tel, f.cargo, f.contratado_em, r.name AS recrutador
+                   FROM funcionarios f
+                   LEFT JOIN recrutadores r ON f.recrutador_id = r.id''')
     funcionarios = cursor.fetchall()
-    cursor.execute('SELECT * FROM recrutadores')
+    cursor.execute('SELECT name FROM recrutadores')
     rec = cursor.fetchall()
     conn.close()
     return render_template('index.html', func=funcionarios, rec=rec)
@@ -30,21 +32,29 @@ def index():
 @app.route('/add_func', methods=['GET', 'POST'])
 def add_func():
 
+    conn = db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute('SELECT id, name FROM recrutadores')
+    recrutadores = cursor.fetchall()
+    conn.close()
+
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
         tel = request.form['tel']
         cargo = request.form['cargo']
         contratado_em = request.form['contratado_em']
+        recrutador = request.form['recrutador']
 
         conn = db_connection()
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO funcionarios (name, email, tel, cargo, contratado_em ) VALUES (%s, %s, %s, %s, %s)', (name, email, tel, cargo, contratado_em))
+        cursor.execute('INSERT INTO funcionarios(name, email, tel, cargo, contratado_em, recrutador_id) VALUES (%s, %s, %s, %s, %s, %s)',
+                       (name, email, tel, cargo, contratado_em, recrutador))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
 
-    return render_template('add_func.html')
+    return render_template('add_func.html', recrutadores=recrutadores)
 
 # Rota para adicionar novo recrutador
 @app.route('/add_recrut', methods=['GET', 'POST'])
@@ -59,7 +69,8 @@ def add_recrut():
 
         conn = db_connection()
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO recrutadores (name, email, tel, cargo) VALUES (%s, %s, %s)', (name, email, tel))
+        cursor.execute('INSERT INTO recrutadores (name, email, tel) VALUES (%s, %s, %s)',
+                       (name, email, tel))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
