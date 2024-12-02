@@ -19,14 +19,16 @@ def index():
 
     conn = db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute('SELECT * FROM Funcionarios')
+    cursor.execute('SELECT * FROM funcionarios')
     funcionarios = cursor.fetchall()
+    cursor.execute('SELECT * FROM recrutadores')
+    rec = cursor.fetchall()
     conn.close()
-    return render_template('index.html', func=funcionarios)
+    return render_template('index.html', func=funcionarios, rec=rec)
 
 # Rota para adicionar novo usuário
-@app.route('/add', methods=['GET', 'POST'])
-def add():
+@app.route('/add_func', methods=['GET', 'POST'])
+def add_func():
 
     if request.method == 'POST':
         name = request.form['name']
@@ -37,21 +39,41 @@ def add():
 
         conn = db_connection()
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO Funcionarios (name, email, tel, cargo, contratado_em ) VALUES (%s, %s, %s, %s, %s)', (name, email, tel, cargo, contratado_em))
+        cursor.execute('INSERT INTO funcionarios (name, email, tel, cargo, contratado_em ) VALUES (%s, %s, %s, %s, %s)', (name, email, tel, cargo, contratado_em))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
 
-    return render_template('add.html')
+    return render_template('add_func.html')
+
+# Rota para adicionar novo recrutador
+@app.route('/add_recrut', methods=['GET', 'POST'])
+def add_recrut():
+
+    cargo_padrao = 'Recrutador'
+
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        tel = request.form['tel']
+
+        conn = db_connection()
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO recrutadores (name, email, tel, cargo) VALUES (%s, %s, %s)', (name, email, tel))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('index'))
+
+    return render_template('add_recrut.html', cargo_padrao=cargo_padrao)
 
 
-@app.route('/edit/<id>', methods=['GET', 'POST'])
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
 
         conn = db_connection()
         cursor = conn.cursor(dictionary=True)
 
-        cursor.execute('SELECT * FROM Funcionarios WHERE id = %s', (id,))
+        cursor.execute('SELECT * FROM funcionarios WHERE id = %s', (id,))
         funcionario = cursor.fetchone()
 
         if not funcionario:
@@ -65,7 +87,7 @@ def edit(id):
             contratado_em = request.form['contratado_em']
 
             cursor.execute('''
-            UPDATE Funcionarios
+            UPDATE funcionarios
             SET name = %s, email = %s, tel = %s, cargo = %s, contratado_em = %s
             WHERE id = %s
             ''', (name, email, tel, cargo, contratado_em, id))
@@ -85,7 +107,7 @@ def delete(id):
     conn = db_connection()
     cursor = conn.cursor()
 
-    cursor.execute('DELETE FROM Funcionarios WHERE id = %s', (id,))
+    cursor.execute('DELETE FROM funcionarios WHERE id = %s', (id,))
     conn.commit()
     conn.close()
 

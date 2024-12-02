@@ -13,7 +13,8 @@
         <h1 class="text-center">Lista de Funcionários</h1>
 
         <div class="text-center mb-3">
-            <a href="{{ url_for('add') }}" class="btn btn-primary">Adicionar funcionário</a>
+            <a href="{{ url_for('add_func') }}" class="btn btn-primary">Adicionar funcionário</a>
+            <a href="{{ url_for('add_recrut') }}" class="btn btn-primary">Adicionar recrutador</a>
         </div>
 
         <div class="table-responsive">
@@ -22,10 +23,11 @@
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Email</th>
+                        <th>E-mail</th>
                         <th>Telefone</th>
                         <th>Cargo</th>
                         <th>Contratado em</th>
+                        <th>Recrutador</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -38,6 +40,7 @@
                         <td>{{ funcs.tel }}</td>
                         <td>{{ funcs.cargo }}</td>
                         <td>{{ funcs.contratado_em }}</td>
+                        <td>{{ funcs.recrutador_id }}</td>
                         <td>
                             <form action="{{ url_for('delete', id=funcs.id) }}" method="POST">
                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash fa-fw" title="Apagar"></i></button>
