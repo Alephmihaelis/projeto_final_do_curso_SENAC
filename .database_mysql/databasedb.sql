@@ -25,3 +25,12 @@ CREATE TABLE funcionarios (
     recrutador_id INT,
     FOREIGN KEY (recrutador_id) REFERENCES recrutadores(id)
 );
+
+/*  Cria uma view chamada `recrutadores_com_funcionarios` */
+CREATE VIEW recrutadores_com_funcionarios AS
+
+SELECT r.id AS recrutador_id, r.name AS recrutador_name, r.email AS recrutador_email, 
+       GROUP_CONCAT(f.id ORDER BY f.id) AS funcionarios_ids
+FROM recrutadores r
+LEFT JOIN funcionarios f ON f.recrutador_id = r.id
+GROUP BY r.id;
