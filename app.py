@@ -9,11 +9,13 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 def db_connection():
+
     conn = mysql.connector.connect(
         host='localhost',
         user='root',
         password='',
         database='databasedb')
+
     return conn
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -44,6 +46,7 @@ def login():
 
 @app.route('/logout')
 def logout():
+
     session.clear()
     return redirect(url_for('index'))
 
@@ -59,6 +62,7 @@ def index():
     cursor.execute('SELECT name FROM recrutadores')
     rec = cursor.fetchall()
     conn.close()
+
     return render_template('index.html', func=funcionarios, rec=rec)
 
 @app.route('/show_recrut')
@@ -73,6 +77,7 @@ def show_recrut():
     cursor.execute('SELECT * FROM recrutadores_com_funcionarios')
     recs = cursor.fetchall()
     conn.close()
+
     return render_template('show_recrut.html', recs=recs, recrutadores=recrutadores)
 
 @app.route('/add_func', methods=['GET', 'POST'])
@@ -94,7 +99,9 @@ def add_func():
 
         conn = db_connection()
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO funcionarios(name, email, tel, cargo, contratado_em, recrutador_id) VALUES (%s, %s, %s, %s, %s, %s)',
+        cursor.execute('''INSERT INTO funcionarios(name, email, tel, cargo, contratado_em, recrutador_id)
+                       VALUES
+                       (%s, %s, %s, %s, %s, %s)''',
                        (name, email, tel, cargo, contratado_em, recrutador))
         conn.commit()
         conn.close()
