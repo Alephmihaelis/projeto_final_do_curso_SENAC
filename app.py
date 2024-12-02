@@ -5,10 +5,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
 app = Flask(__name__)
-
 app.secret_key = os.urandom(24)
 
 def db_connection():
+
+    """
+    Conecta ao banco de dados e retorna o objeto da conexão.
+    """
 
     conn = mysql.connector.connect(
         host='localhost',
@@ -18,8 +21,13 @@ def db_connection():
 
     return conn
 
+# Função de `login`
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    """
+    Rota de login.
+    """
 
     if request.method == 'POST':
         email = request.form['email']
