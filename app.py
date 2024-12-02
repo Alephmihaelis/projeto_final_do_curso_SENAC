@@ -1,10 +1,13 @@
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, flash, render_template, request, redirect, session, url_for
 import mysql.connector
+from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
 
-# Conecta com o banco de dados
+app.secret_key = os.urandom(24)
+
 def db_connection():
     conn = mysql.connector.connect(
         host='localhost',
@@ -13,7 +16,37 @@ def db_connection():
         database='databasedb')
     return conn
 
-# Rota inicial em que são exibidos todos os usuários
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        
+        conn = db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM recrutadores WHERE email = %s", (email,))
+        recrutador = cursor.fetchone()
+        conn.close()
+
+        if recrutador and check_password_hash(recrutador['password'], password):
+            session['recrutador_id'] = recrutador['id']
+            session['recrutador_name'] = recrutador['name']
+            flash("Login realizado com sucesso!", "success")
+            return redirect(url_for('index'))
+        
+        else:
+            flash("Credenciais inválidas!")
+            return redirect(url_for('login'))
+        
+
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
+
 @app.route('/')
 def index():
 
@@ -28,7 +61,20 @@ def index():
     conn.close()
     return render_template('index.html', func=funcionarios, rec=rec)
 
-# Rota para adicionar novo usuário
+@app.route('/show_recrut')
+def show_recrut():
+
+    conn = db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute('SELECT * FROM recrutadores')
+    recrutadores = cursor.fetchall()
+
+    cursor.execute('SELECT * FROM recrutadores_com_funcionarios')
+    recs = cursor.fetchall()
+    conn.close()
+    return render_template('show_recrut.html', recs=recs, recrutadores=recrutadores)
+
 @app.route('/add_func', methods=['GET', 'POST'])
 def add_func():
 
@@ -56,21 +102,24 @@ def add_func():
 
     return render_template('add_func.html', recrutadores=recrutadores)
 
-# Rota para adicionar novo recrutador
 @app.route('/add_recrut', methods=['GET', 'POST'])
 def add_recrut():
 
     cargo_padrao = 'Recrutador'
 
     if request.method == 'POST':
+
         name = request.form['name']
         email = request.form['email']
         tel = request.form['tel']
+        password = request.form['password']
+
+        hashed_password = generate_password_hash(password)
 
         conn = db_connection()
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO recrutadores (name, email, tel) VALUES (%s, %s, %s)',
-                       (name, email, tel))
+        cursor.execute('INSERT INTO recrutadores (name, email, tel, password) VALUES (%s, %s, %s, %s)',
+                        (name, email, tel, hashed_password))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))

@@ -11,7 +11,8 @@ CREATE TABLE recrutadores (
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     tel VARCHAR(15) NOT NULL,
-    cargo VARCHAR(127) DEFAULT 'Recrutador'
+    cargo VARCHAR(127) DEFAULT 'Recrutador',
+    password VARCHAR(255)
 );
 
 -- Criação da tabela funcionarios
@@ -26,9 +27,7 @@ CREATE TABLE funcionarios (
     FOREIGN KEY (recrutador_id) REFERENCES recrutadores(id)
 );
 
-/*  Cria uma view chamada `recrutadores_com_funcionarios` */
 CREATE VIEW recrutadores_com_funcionarios AS
-
 SELECT r.id AS recrutador_id, r.name AS recrutador_name, r.email AS recrutador_email, 
        GROUP_CONCAT(f.id ORDER BY f.id) AS funcionarios_ids
 FROM recrutadores r
