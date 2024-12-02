@@ -6,7 +6,6 @@ CREATE DATABASE databasedb
 
 USE databasedb;
 
--- Criação da tabela recrutadores
 CREATE TABLE recrutadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -23,6 +22,6 @@ CREATE TABLE funcionarios (
     tel VARCHAR(15) NOT NULL,
     cargo VARCHAR(127) NOT NULL,
     contratado_em DATE DEFAULT CURRENT_TIMESTAMP,
-    recrutador_id INT,  -- Chave estrangeira referenciando recrutadores(id)
-    FOREIGN KEY (recrutador_id) REFERENCES recrutadores(id)  -- Relacionamento com recrutadores
+    recrutador_id INT,
+    FOREIGN KEY (recrutador_id) REFERENCES recrutadores(id)
 );
