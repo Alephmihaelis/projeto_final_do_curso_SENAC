@@ -69,11 +69,9 @@ Werkzeug==3.1.3
 Crie um banco de dados MySQL. O banco de dados pode ser criado com o seguinte script:
 
 ```
-DROP DATABASE IF EXISTS databasedb;
+CREATE DATABASE seu-banco-de-dados CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE DATABASE databasedb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE databasedb;
+USE seu-banco-de-dados;
 
 CREATE TABLE recrutadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -110,7 +108,7 @@ def db_connection():
         host='localhost',
         user='root',
         password='',
-        database='databasedb'
+        database='seu-banco-de-dados'
     )
     return conn
 ```
