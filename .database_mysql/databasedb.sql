@@ -15,7 +15,6 @@ CREATE TABLE recrutadores (
     password VARCHAR(255)
 );
 
--- Criação da tabela funcionarios
 CREATE TABLE funcionarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,

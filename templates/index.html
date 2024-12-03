@@ -15,10 +15,10 @@
         <div class="text-center mb-3">
             {% if 'recrutador_id' not in session %}
                 <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                <a href="{{ url_for('add_recrut') }}" class="btn btn-primary">Adicionar recrutador</a>
             {% endif %}
             {% if 'recrutador_id' in session %}
             <a href="{{ url_for('add_func') }}" class="btn btn-primary">Adicionar funcionário</a>
-            <a href="{{ url_for('add_recrut') }}" class="btn btn-primary">Adicionar recrutador</a>
             {% endif %}
             <a href="{{ url_for('show_recrut') }}" class="btn btn-primary">Mostrar recrutadores</a>
 

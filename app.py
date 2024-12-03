@@ -36,7 +36,7 @@ def login():
         email = request.form['email']
         password = request.form['password']
 
-        # Abre a conexão com o banco de dados        
+        # Abre a conexão com o banco de dados
         conn = db_connection()
         cursor = conn.cursor(dictionary=True)
 
