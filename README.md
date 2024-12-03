@@ -49,3 +49,65 @@ Instale as dependências necessárias com o `pip`:
 ```
 pip install -r requirements.txt
 ```
+O arquivo `requeriments.txt` deve conter as bibliotecas necessárias para o funcionamento do projeto:
+Flask==2.2.2
+mysql-connector-python==8.0.33
+werkzeug==2.2.3
+
+### 3. Configurando o banco de dados
+
+Crie um banco de dados MySQL. O banco de dados pode ser criado com o seguinte script:
+
+```
+DROP DATABASE IF EXISTS databasedb;
+
+CREATE DATABASE databasedb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE databasedb;
+
+CREATE TABLE recrutadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    tel VARCHAR(15) NOT NULL,
+    cargo VARCHAR(127) DEFAULT 'Recrutador',
+    password VARCHAR(255)
+);
+
+CREATE TABLE funcionarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    tel VARCHAR(15) NOT NULL,
+    cargo VARCHAR(127) NOT NULL,
+    contratado_em DATE DEFAULT CURRENT_TIMESTAMP,
+    recrutador_id INT,
+    FOREIGN KEY (recrutador_id) REFERENCES recrutadores(id)
+);
+
+CREATE VIEW recrutadores_com_funcionarios AS
+SELECT r.id AS recrutador_id, r.name AS recrutador_name, r.email AS recrutador_email, 
+       GROUP_CONCAT(f.id ORDER BY f.id) AS funcionarios_ids
+FROM recrutadores r
+LEFT JOIN funcionarios f ON f.recrutador_id = r.id
+GROUP BY r.id;
+```
+
+Atualize as configurações de conexão do banco de dados no seu código Python:
+```
+def db_connection():
+    conn = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='',
+        database='databasedb'
+    )
+    return conn
+```
+
+### 4. Rode o servidor Flask
+Após configurar o banco de dados, você pode rodar o servidor Flask. No terminal, execute:
+```
+python app.py
+```
+Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
