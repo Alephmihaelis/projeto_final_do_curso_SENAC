@@ -36,7 +36,7 @@ Certifique-se de ter os seguintes softwares instalados em seu sistema:
 - **XAMPP** (caso deseje usar MySQL do XAMPP)
 - **pip** (gerenciador de pacotes Python)
 
-### 2. Instalando Dependências
+### 2. Instalando dependências
 
 Clone este repositório para o seu computador:
 
@@ -111,3 +111,7 @@ Após configurar o banco de dados, você pode rodar o servidor Flask. No termina
 python app.py
 ```
 Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
+
+### 5. Usando o sistema
+1. **ATENÇÃO:** O recrutador deve ser criado diretamente no aplicativo, e não previamente no banco de dados.
+2. Use as funcionalidades para visualizar funcionários, adicionar novos e gerenciar os recrutadores.
