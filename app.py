@@ -4,7 +4,10 @@ import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
+# Cria o app Flask
 app = Flask(__name__)
+
+# Define a chave secreta para sessões
 app.secret_key = os.urandom(24)
 
 def db_connection():
