@@ -146,3 +146,9 @@ Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
 │   ├── index.css         # CSS da página principal
 │   ├── login.css         # CSS da página de login
 └── README.md             # Este arquivo
+```
+### Contribuições
+Se você deseja contribuir com este projeto, fique à vontade para abrir um **pull request** ou relatar problemas em **Issues**.
+
+### Licença de uso
+A licença deste projeto é **MIT**. Para mais informações, veja o arquivo LICENSE.
