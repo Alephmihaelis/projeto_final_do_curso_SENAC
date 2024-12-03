@@ -1,2 +1,12 @@
-# projeto_final_do_curso_SENAC
- Projeto simples com Python, Flask e SQLite, no qual se manuseia uma lista de funcionários.
+# Aplicativo Web Simples
+
+Aplicativo web simples em que se gerenciam uma lista de funcionários e uma lista de recrutadores.
+
+## Recursos utilizados
+
+- HTML
+- CSS
+- JavaScript
+- Python
+- Flask
+- MySQL
