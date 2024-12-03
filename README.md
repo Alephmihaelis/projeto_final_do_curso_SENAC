@@ -4,10 +4,11 @@ Aplicativo web simples em que se gerenciam uma lista de funcionários e uma list
 
 ## Recursos utilizados
 
-- HTML
-- CSS
-- JavaScript
-- BootStrap
-- Python
-- Flask
-- MySQL
+- HTML;
+- CSS;
+- JavaScript;
+- BootStrap;
+- Python;
+- Flask;
+- MySQL;
+- Werkzeug.
