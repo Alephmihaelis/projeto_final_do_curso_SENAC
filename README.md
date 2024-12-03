@@ -1,18 +1,18 @@
-# Projeto Web - Sistema de Recrutamento
+# Projeto final do curso SENAC: Projeto Web - Sistema de Recrutamento
 
 Este é um projeto simples de um sistema de recrutamento que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados. Foi desenvolvido utilizando **HTML**, **CSS**, **JavaScript**, **Python**, **Flask**, **MySQL** e **werkzeug.security**.
 
 ## Tecnologias Utilizadas
 
 - **Frontend**:
-  - HTML
-  - CSS
-  - JavaScript
+  - HTML;
+  - CSS;
+  - JavaScript.
 
 - **Backend**:
-  - Python
-  - Flask
-  - Werkzeug (para criptografia de senhas)
+  - Python;
+  - Flask;
+  - Werkzeug.
 
 - **Banco de Dados**:
   - MySQL
@@ -21,7 +21,7 @@ Este é um projeto simples de um sistema de recrutamento que permite o login de 
 
 - **Cadastro de Recrutadores**: Recrutadores podem se cadastrar criando um nome, email, telefone e senha.
 - **Login de Recrutadores**: Recrutadores podem fazer login com o email e senha cadastrados.
-- **Visualização de Funcionários**: Recrutadores podem ver uma lista de funcionários e seus dados.
+- **Visualização de Funcionários**: Recrutadores e usuários comuns podem ver uma lista de funcionários e seus dados.
 - **Gerenciamento de Funcionários**: Adicionar, editar e deletar funcionários associados a um recrutador.
 - **Criptografia de Senhas**: As senhas dos recrutadores são criptografadas usando a biblioteca `werkzeug.security`.
 
