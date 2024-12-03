@@ -134,12 +134,12 @@ Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
 ├── app.py                # Arquivo principal que contém o código do Flask
 ├── requirements.txt      # Arquivo com as dependências do projeto
 ├── templates/            # Pasta com os templates HTML
+│   ├── add_func.html     # Página para adicionar funcionário
+│   ├── add_recrut.html   # Página para adicionar recrutadores
+│   ├── edit.html         # Página para edição de funcionários e de recrutadores
 │   ├── index.html        # Página inicial
 │   ├── login.html        # Página de login
-│   ├── add_func.html     # Formulário para adicionar funcionário
-│   ├── add_recrut.html   # Formulário para adicionar recrutador
-│   ├── show_recrut.html  # Exibição de recrutadores
-│   └── edit.html         # Formulário para editar funcionário
+│   ├── show_recrut.html  # Página para exibição de recrutadores
 ├── static/               # Arquivo estático com CSS
 │   ├── add.css           # CSS da página para adicionar funcionários
 │   ├── edit.css          # CSS da página para editar funcionários
