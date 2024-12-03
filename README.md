@@ -14,7 +14,7 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários, que 
   - Flask;
   - Werkzeug.
 
-- **Banco de Dados**:
+- **Banco de dados**:
   - MySQL.
 
 ## Funcionalidades
