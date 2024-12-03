@@ -51,9 +51,17 @@ pip install -r requirements.txt
 ```
 O arquivo `requeriments.txt` deve conter as bibliotecas necessárias para o funcionamento do projeto:
 ```
-Flask==2.2.2
-mysql-connector-python==8.0.33
-werkzeug==2.2.3
+blinker==1.9.0
+click==8.1.7
+colorama==0.4.6
+Flask==3.1.0
+Flask-Login==0.6.3
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==3.0.2
+mysql-connector==2.2.9
+mysql-connector-python==9.1.0
+Werkzeug==3.1.3
 ```
 
 ### 3. Configurando o banco de dados
