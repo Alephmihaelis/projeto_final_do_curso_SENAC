@@ -124,4 +124,3 @@ Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
 
 ### 5. Usando o sistema
 1. **ATENÇÃO:** O recrutador deve ser criado diretamente no aplicativo, e não previamente no banco de dados.
-2. Use as funcionalidades para visualizar funcionários, adicionar novos e gerenciar os recrutadores.
