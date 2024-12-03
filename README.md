@@ -50,9 +50,10 @@ Instale as dependências necessárias com o `pip`:
 pip install -r requirements.txt
 ```
 O arquivo `requeriments.txt` deve conter as bibliotecas necessárias para o funcionamento do projeto:
-<br>Flask==2.2.2<br>
-mysql-connector-python==8.0.33<br>
+```Flask==2.2.2
+mysql-connector-python==8.0.33
 werkzeug==2.2.3
+```
 
 ### 3. Configurando o banco de dados
 
