@@ -1,6 +1,6 @@
 # Projeto Web - Sistema de Recrutamento
 
-Este é um projeto simples de um sistema de recrutamento que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados. Foi desenvolvido utilizando **HTML**, **CSS**, **JavaScript**, **Python**, **Flask**, **MySQL** e **werkzeug.security** para criptografia de senhas.
+Este é um projeto simples de um sistema de recrutamento que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados. Foi desenvolvido utilizando **HTML**, **CSS**, **JavaScript**, **Python**, **Flask**, **MySQL** e **werkzeug.security**.
 
 ## Tecnologias Utilizadas
 
