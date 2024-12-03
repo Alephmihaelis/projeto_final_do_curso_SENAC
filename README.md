@@ -1,6 +1,6 @@
 # Projeto final do curso SENAC: Projeto Web: Gerenciamento de funcionários
 <div style="text-align: justify;">
-Este é um projeto simples de um sistema de gerenciamento de funcionários, que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados. Este projeto foi desenvolvido utilizando **HTML**, **CSS**, **JavaScript**, **Python**, **Flask**, **MySQL** e **werkzeug.security**.
+    Este é um projeto simples de um sistema de gerenciamento de funcionários, que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados. Este projeto foi desenvolvido utilizando **HTML**, **CSS**, **JavaScript**, **Python**, **Flask**, **MySQL** e **werkzeug.security**.
 </div>
 ## Tecnologias Utilizadas
 
