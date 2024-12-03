@@ -15,7 +15,7 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários, que 
   - Werkzeug.
 
 - **Banco de Dados**:
-  - MySQL
+  - MySQL.
 
 ## Funcionalidades
 
