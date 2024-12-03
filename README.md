@@ -151,5 +151,11 @@ Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
 ## Contribuições
 Se você deseja contribuir com este projeto, fique à vontade para abrir um **pull request** ou relatar problemas em **Issues**.
 
+<style>
+  .cor {
+    color: #ADD8E6;
+  }
+</style>
+
 ## Licença de uso
-A licença deste projeto é **MIT**. Para mais informações, veja o arquivo <span style="color: #ADD8E6;">LICENSE</span>.
+A licença deste projeto é **MIT**. Para mais informações, veja o arquivo <span class="cor">LICENSE</span>.
