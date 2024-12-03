@@ -19,13 +19,13 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários, que 
 
 ## Funcionalidades
 
-- **Cadastro de Recrutadores**: Recrutadores podem se cadastrar criando um nome, email, telefone e senha.
+- **Cadastro de Recrutadores**: Recrutadores podem ser cadastrados criando um nome, um email, um telefone e uma senha.
 - **Login de Recrutadores**: Recrutadores podem fazer login com o email e senha cadastrados.
 - **Visualização de Funcionários**: Recrutadores e usuários comuns podem ver uma lista de funcionários e seus dados.
-- **Gerenciamento de Funcionários**: Adicionar, editar e deletar funcionários associados a um recrutador.
+- **Gerenciamento de Funcionários**: Recrutadores podem adicionar, editar e deletar funcionários.
 - **Criptografia de Senhas**: As senhas dos recrutadores são criptografadas usando a biblioteca `werkzeug.security`.
 
-## Como Rodar o Projeto
+## Como rodar o projeto
 
 ### 1. Requisitos
 
