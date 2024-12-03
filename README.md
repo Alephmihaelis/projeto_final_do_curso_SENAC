@@ -8,6 +8,7 @@ Aplicativo web simples em que se faz o gerenciamento (exibição, adição, edi�
 - CSS;
 - JavaScript;
 - BootStrap;
+- Font Awesome;
 - Python;
 - Flask;
 - MySQL;
