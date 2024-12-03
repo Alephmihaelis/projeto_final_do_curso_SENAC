@@ -124,3 +124,25 @@ Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
 
 ### 5. Usando o sistema
 1. **ATENÇÃO:** O recrutador deve ser criado diretamente no aplicativo, e não previamente no banco de dados.
+
+### 6. Estrutura do projeto
+```
+/seu-projeto
+│
+├── .database_mysql       # Pasta com o banco de dados
+│   ├── databasedb.sql    # Arquivo que modela o banco de dados usado no projeto
+├── app.py                # Arquivo principal que contém o código do Flask
+├── requirements.txt      # Arquivo com as dependências do projeto
+├── templates/            # Pasta com os templates HTML
+│   ├── index.html        # Página inicial
+│   ├── login.html        # Página de login
+│   ├── add_func.html     # Formulário para adicionar funcionário
+│   ├── add_recrut.html   # Formulário para adicionar recrutador
+│   ├── show_recrut.html  # Exibição de recrutadores
+│   └── edit.html         # Formulário para editar funcionário
+├── static/               # Arquivo estático com CSS
+│   ├── add.css           # CSS da página para adicionar funcionários
+│   ├── edit.css          # CSS da página para editar funcionários
+│   ├── index.css         # CSS da página principal
+│   ├── login.css         # CSS da página de login
+└── README.md             # Este arquivo
