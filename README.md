@@ -31,10 +31,10 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários, que 
 
 Certifique-se de ter os seguintes softwares instalados em seu sistema:
 
-- **Python** (versão 3.6 ou superior)
-- **MySQL** (instalado e configurado)
-- **XAMPP** (caso deseje usar MySQL do XAMPP)
-- **pip** (gerenciador de pacotes Python)
+- **Python** (versão 3.6 ou superior);
+- **MySQL**;
+- **XAMPP** (caso deseje usar o MySQL do XAMPP);
+- **pip**.
 
 ### 2. Instalando dependências
 
