@@ -69,7 +69,9 @@ Werkzeug==3.1.3
 Crie um banco de dados MySQL. O banco de dados pode ser criado com o seguinte script:
 
 ```
-CREATE DATABASE seu-banco-de-dados CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE seu-banco-de-dados
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
 
 USE seu-banco-de-dados;
 
