@@ -49,7 +49,7 @@ cd seu-projeto
 
 Instale as dependências necessárias com o `pip`:
 ```
-pip install -r requirements.txt
+pip install -r requeriments.txt
 ```
 O arquivo `requeriments.txt` deve conter as bibliotecas necessárias para o funcionamento do projeto:
 ```
