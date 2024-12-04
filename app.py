@@ -16,7 +16,7 @@ def db_connection():
     Conecta ao banco de dados e retorna o objeto da conexão.
     '''
 
-    # Estabelece a conexã com o MySQL
+    # Estabelece a conexão com o MySQL
     conn = mysql.connector.connect(
         host='localhost', # Host do banco de dados
         user='root', # Usuário do banco de dados
