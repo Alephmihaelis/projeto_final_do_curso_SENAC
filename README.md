@@ -35,7 +35,7 @@ Certifique-se de ter os seguintes softwares instalados em seu sistema:
 
 - **Python** (versão 3.6 ou superior);
 - **MySQL**;
-- **XAMPP** (caso deseje usar o MySQL do XAMPP);
+- **XAMPP** (caso queira usar o MySQL do XAMPP);
 - **pip**.
 
 ### 2. Instalando dependências
