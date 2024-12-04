@@ -14,7 +14,7 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários que p
 - **Backend**:
   - Python;
   - Flask;
-  - Werkzeug.
+  - Werkzeug.security
 
 - **Banco de dados**:
   - MySQL.
