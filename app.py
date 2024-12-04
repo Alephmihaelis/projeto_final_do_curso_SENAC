@@ -12,10 +12,6 @@ app.secret_key = os.urandom(24)
 
 def db_connection():
 
-    '''
-    Conecta ao banco de dados e retorna o objeto da conexão.
-    '''
-
     # Estabelece a conexão com o MySQL
     conn = mysql.connector.connect(
         host='localhost',       # Host do banco de dados
@@ -24,7 +20,7 @@ def db_connection():
         database='databasedb'   # Nome do banco de dados
         )
 
-    return conn # Retorna a conexão feita com o banco de dados
+    return conn                 # Retorna a conexão feita com o banco de dados
 
 # Função da rota login
 @app.route('/login', methods=['GET', 'POST'])
