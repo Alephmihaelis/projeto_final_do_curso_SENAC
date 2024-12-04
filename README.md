@@ -4,28 +4,28 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários que p
 
 ## Tecnologias utilizadas
 
-- **Frontend**:
+- **Frontend:**
   - HTML;
   - CSS;
   - BootStrap;
   - Font Awesome;
   - JavaScript.
 
-- **Backend**:
+- **Backend:**
   - Python;
   - Flask;
   - Werkzeug.
 
-- **Banco de dados**:
+- **Banco de dados:**
   - MySQL.
 
 ## Funcionalidades
 
-- **Cadastro de recrutadores**: Recrutadores podem ser cadastrados criando um nome, um e-mail, um telefone e uma senha.
-- **Login de recrutadores**: Recrutadores podem fazer login com o e-mail e senha cadastrados.
-- **Visualização de funcionários**: Recrutadores e usuários comuns podem ver uma lista de funcionários e seus dados.
-- **Gerenciamento de funcionários**: Recrutadores podem adicionar, editar e deletar funcionários.
-- **Criptografia de senhas**: As senhas dos recrutadores são criptografadas usando a biblioteca `werkzeug.security`.
+- **Cadastro de recrutadores:** Recrutadores podem ser cadastrados criando um nome, um e-mail, um telefone e uma senha.
+- **Login de recrutadores:** Recrutadores podem fazer login com o e-mail e senha cadastrados.
+- **Visualização de funcionários:** Recrutadores e usuários comuns podem ver uma lista de funcionários e seus dados.
+- **Gerenciamento de funcionários:** Recrutadores podem adicionar, editar e deletar funcionários.
+- **Criptografia de senhas:** As senhas dos recrutadores são criptografadas usando a biblioteca `werkzeug.security`.
 
 ## Como rodar o projeto
 
@@ -118,11 +118,11 @@ def db_connection():
 ```
 
 ### 4. Rode o servidor Flask
-Após configurar o banco de dados, você pode rodar o servidor Flask. No terminal, execute:
+Após configurar o banco de dados, você já pode rodar o servidor Flask. No terminal, execute:
 ```
 python app.py
 ```
-Por padrão, o aplicativo estará disponível em http://127.0.0.1:5000.
+Por padrão, o aplicativo será disponibilizado em http://127.0.0.1:5000.
 
 ### 5. Usando o sistema
 1. **ATENÇÃO:** O recrutador deve ser criado diretamente no aplicativo, e não previamente no banco de dados.
