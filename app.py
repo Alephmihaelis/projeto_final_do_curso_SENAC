@@ -18,10 +18,10 @@ def db_connection():
 
     # Estabelece a conexão com o MySQL
     conn = mysql.connector.connect(
-        host='localhost', # Host do banco de dados
-        user='root', # Usuário do banco de dados
-        password='', # Senha do banco de dados
-        database='databasedb' # Nome do banco de dados
+        host='localhost',       # Host do banco de dados
+        user='root',            # Usuário do banco de dados
+        password='',            # Senha do banco de dados
+        database='databasedb'   # Nome do banco de dados
         )
 
     return conn # Retorna a conexão feita com o banco de dados
