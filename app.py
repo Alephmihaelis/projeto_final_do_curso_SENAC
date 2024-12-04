@@ -278,8 +278,8 @@ def delete(id):
 
     # Deleta o funcionário de acordo com o `id` capturado
     cursor.execute('DELETE FROM funcionarios WHERE id = %s', (id,))
-    conn.commit() # Confirma a exclusão
-    conn.close() # Fecha a conexão com o banco de dados
+    conn.commit()   # Confirma a exclusão
+    conn.close()    # Fecha a conexão com o banco de dados
 
     # Redireciona para `index`
     return redirect(url_for('index'))
