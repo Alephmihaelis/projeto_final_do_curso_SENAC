@@ -1,12 +1,14 @@
 # Projeto final do curso SENAC: Projeto Web: Gerenciamento de funcionários
 
-Este é um projeto simples de um sistema de gerenciamento de funcionários, que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados. Este projeto foi desenvolvido utilizando **HTML**, **CSS**, **JavaScript**, **Python**, **Flask**, **MySQL** e **werkzeug.security**.
+Este é um projeto simples de um sistema de gerenciamento de funcionários que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados.
 
 ## Tecnologias utilizadas
 
 - **Frontend**:
   - HTML;
   - CSS;
+  - BootStrap;
+  - Font Awesome;
   - JavaScript.
 
 - **Backend**:
@@ -19,11 +21,11 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários, que 
 
 ## Funcionalidades
 
-- **Cadastro de Recrutadores**: Recrutadores podem ser cadastrados criando um nome, um email, um telefone e uma senha.
-- **Login de Recrutadores**: Recrutadores podem fazer login com o email e senha cadastrados.
-- **Visualização de Funcionários**: Recrutadores e usuários comuns podem ver uma lista de funcionários e seus dados.
-- **Gerenciamento de Funcionários**: Recrutadores podem adicionar, editar e deletar funcionários.
-- **Criptografia de Senhas**: As senhas dos recrutadores são criptografadas usando a biblioteca `werkzeug.security`.
+- **Cadastro de recrutadores**: Recrutadores podem ser cadastrados criando um nome, um e-mail, um telefone e uma senha.
+- **Login de recrutadores**: Recrutadores podem fazer login com o e-mail e senha cadastrados.
+- **Visualização de funcionários**: Recrutadores e usuários comuns podem ver uma lista de funcionários e seus dados.
+- **Gerenciamento de funcionários**: Recrutadores podem adicionar, editar e deletar funcionários.
+- **Criptografia de senhas**: As senhas dos recrutadores são criptografadas usando a biblioteca `werkzeug.security`.
 
 ## Como rodar o projeto
 
@@ -38,7 +40,7 @@ Certifique-se de ter os seguintes softwares instalados em seu sistema:
 
 ### 2. Instalando dependências
 
-Clone este repositório para o seu computador:
+Copie este repositório para o seu computador:
 
 ```bash
 git clone https://github.com/seu-usuario/seu-projeto.git
