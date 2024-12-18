@@ -4,7 +4,7 @@ Este é um projeto simples de um sistema de gerenciamento de funcionários que p
 
 ## Aviso preliminar
 Uma vez que este projeto foi realizado para a finalização do curso no SENAC-RJ, não atualizarei mais seu repositório. Melhorias no front-end e no back-end serão realizadas no seguinte repositório:
-``
+`https://github.com/Alephmihaelis/Melhorias_projeto_SENAC`
 
 ## Tecnologias utilizadas
 
