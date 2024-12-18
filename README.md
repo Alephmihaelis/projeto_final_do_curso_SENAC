@@ -2,6 +2,10 @@
 
 Este é um projeto simples de um sistema de gerenciamento de funcionários que permite o login de recrutadores, visualização de funcionários e gerenciamento de dados no banco de dados.
 
+## Aviso preliminar
+Uma vez que este projeto foi realizado para a finalização do curso no SENAC-RJ, não atualizarei mais seu repositório. Melhorias no front-end e no back-end serão realizadas no seguinte repositório:
+``
+
 ## Tecnologias utilizadas
 
 - **Frontend**:
