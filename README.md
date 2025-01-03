@@ -12,7 +12,6 @@ https://github.com/Alephmihaelis/Melhorias_projeto_SENAC
 - **Frontend**:
   - HTML;
   - CSS;
-  - BootStrap;
   - Font Awesome;
   - JavaScript.
 
